@@ -38,6 +38,19 @@ jobs:
         run: |
           cp "$GITHUB_WORKSPACE/gradle.properties" "$GITHUB_WORKSPACE/source/gradle.properties"
 
+      - name: Fix Java and Kotlin JVM target
+        run: |
+          sed -i '/android {/a\
+              compileOptions {\
+                  sourceCompatibility = JavaVersion.VERSION_17\
+                  targetCompatibility = JavaVersion.VERSION_17\
+              }' source/app/build.gradle.kts
+
+          sed -i '/android {/a\
+              kotlinOptions {\
+                  jvmTarget = "17"\
+              }' source/app/build.gradle.kts
+
       - name: Build APK
         working-directory: source
         run: |
