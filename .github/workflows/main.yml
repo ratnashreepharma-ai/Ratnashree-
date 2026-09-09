@@ -34,8 +34,8 @@ jobs:
         run: |
           cd source
           gradle assembleDebug --no-daemon \
-            -android.useAndroidX=true \
-            -android.enableJetifier=true
+            -pandroid.useAndroidX=true \
+            -pandroid.enableJetifier=true
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
