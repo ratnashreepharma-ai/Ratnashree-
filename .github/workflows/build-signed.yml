@@ -31,7 +31,7 @@ jobs:
         run: |
           rm -rf source
           mkdir source
-  
+          ZIP_FILE="RatnashreePharma_v1.7_DirectUpdate_FIXED.zip"
           echo "Using: $ZIP_FILE"
           unzip -q "$ZIP_FILE" -d source
 
