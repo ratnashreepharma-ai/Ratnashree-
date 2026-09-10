@@ -23,6 +23,7 @@ jobs:
             -keyalg RSA \
             -keysize 2048 \
             -validity 10000 \
+            -noprompt \
             -storepass "${{ secrets.KEYSTORE_PASSWORD }}" \
             -keypass "${{ secrets.KEYSTORE_KEY_PASSWORD }}" \
             -dname "CN=Ratnashree Pharma, O=Ratnashree Pharma, C=IN"
